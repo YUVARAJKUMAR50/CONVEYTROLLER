@@ -8,7 +8,7 @@ A belt conveyor is a widely used mechanical system for transporting materials ef
 Understanding the causes and consequences of belt dislodgment is crucial for ensuring smooth operation and minimizing downtime.
 
 ## Objective
-The device should serve following features 
+The device should serve following features   
 -> To Maintain proper troughing angle 
 
 -> To Monitor the belt tracking and keep it always in a central position
@@ -26,11 +26,11 @@ The device should serve following features
 ->Regulating the motor to oversee the prevention of conveyor belt misalignment.  
 
 <p align="center">
-  <img src="Images/Existing sl.png" width="400">
+  <img src="Images/Existing sl.png" width="500">
 </p>
 
 ## Proposed Solution
-Designing a Belt Tracking Monitoring Device by Integrating a Light Sensor Adjacent to the Motor, Employing a Buzzer as an Alarm to Detect Heightened Misalignment, and Incorporating a Bluetooth Module for Instant Alert Notifications.<img width="7113" height="140" alt="image" src="https://github.com/user-attachments/assets/e05a3630-fd60-4a29-ba61-6b9b3f551e05" />
+Designing a Belt Tracking Monitoring Device by Integrating a Light Sensor Adjacent to the Motor, Employing a Buzzer as an Alarm to Detect Heightened Misalignment, and Incorporating a Bluetooth Module for Instant Alert Notifications.
 <p align="center">Block Diagram</p>
 <p align="center">
   <img src="Images/BD.png" width="400">
@@ -47,12 +47,12 @@ Connecting Wires
 ## App Integration
 The mobile application is integrated with the conveyor monitoring system through a Bluetooth module (HC-05). It receives real-time alerts from the Arduino when belt misalignment is detected and immediately notifies nearby workers. The app also sends SMS alerts to higher officials in case of severe misalignment, enabling quick response and ensuring timely shutdown of the conveyor system for safety.
 <p align="center">
-  <img src="Images/BD.png" width="400">
+  <img src="Images/App Output.png" width="500">
 </p>
 
 ## Statement From SIH
 <p align="center">
-  <img src="Images/sih.jpg" width="400">
+  <img src="Images/sih.jpg" width="500">
 </p>
 
 ## Advantages
