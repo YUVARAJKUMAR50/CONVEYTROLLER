@@ -1,0 +1,46 @@
+#include <SoftwareSerial.h>
+
+// HC-05 Bluetooth
+SoftwareSerial bluetooth(10, 11); // RX, TX
+
+// Pin definitions
+int irSensor = 2;
+int relayPin = 8;
+int buzzerPin = 9;
+
+void setup() {
+  pinMode(irSensor, INPUT);
+  pinMode(relayPin, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
+
+  digitalWrite(relayPin, HIGH);   // Conveyor ON (Relay active LOW)
+  digitalWrite(buzzerPin, LOW);
+
+  Serial.begin(9600);
+  bluetooth.begin(9600);
+
+  bluetooth.println("Conveyor Monitoring System Started");
+}
+
+void loop() {
+  int sensorValue = digitalRead(irSensor);
+
+  if (sensorValue == LOW) {  // Misalignment detected
+    bluetooth.println("ALERT: Conveyor Belt Misalignment Detected");
+    Serial.println("Misalignment Detected");
+
+    digitalWrite(buzzerPin, HIGH);   // Buzzer ON
+    delay(2000);
+
+    // Severe misalignment → Shutdown
+    bluetooth.println("CRITICAL: Conveyor Shut Down");
+    digitalWrite(relayPin, LOW);     // Turn OFF conveyor
+    delay(5000);
+  } 
+  else {
+    digitalWrite(buzzerPin, LOW);
+    digitalWrite(relayPin, HIGH);    // Conveyor ON
+  }
+
+  delay(500);
+}
